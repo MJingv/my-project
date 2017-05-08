@@ -1,6 +1,7 @@
 <template>
   <div class="login-form">
     <div class="g-form">
+
       <div class="g-form-line">
           <span class="g-form-label">用户名：</span>
           <span class="g-form-input">
@@ -10,7 +11,7 @@
           <span class="g-form-error">{{userErrors.errorText}}</span>
       </div>
       <div class="g-form-line">
-          <span class="g-form-label">密码：</span>
+          <span class="g-form-label">密 &nbsp;&nbsp;码：</span>
             <span class="g-form-input">
               <input type="password"
                v-model="passwordModel" placeholder="请输入密码 ">
@@ -22,7 +23,7 @@
           <a class="button" @click="onLogin">登陆</a>
         </div>
        </div>
-       <div>{{errorText}}</div>
+       <div class="g-form-totalerror" >{{errorText}}</div>
 
     </div>
   
@@ -107,6 +108,7 @@ methods:{
   position: fixed;
   width: 100%;
   height: 100%;
+
 }
 .dialog-cover {
   background: #000;
@@ -117,6 +119,7 @@ methods:{
   left: 0;
   width: 100%;
   height: 100%;
+
 }
 .dialog-content {
   width: 50%;
@@ -131,6 +134,7 @@ methods:{
   border: 2px solid #464068;
   padding: 2%;
   line-height: 1.6;
+
 }
 .dialog-close {
   position: absolute;
@@ -148,10 +152,11 @@ methods:{
   background: #4fc08d;
   color: #fff;
   padding: 5px 15px;
-  margin-left:40%;
-
+  text-align: center;
+  margin: 0;
 
 }
+
 .g-form-input input{
   height: 30px;
   width: 200px;
@@ -166,5 +171,11 @@ methods:{
 .g-form-error{
   color:red;
   padding-left: 15px; 
+  font-size: 12px;
+}
+.g-form-totalerror{
+padding: 5px 10px;
+ float: left;
+ color: red;
 }
 </style>

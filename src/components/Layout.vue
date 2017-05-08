@@ -2,10 +2,14 @@
   <div @click="resetComponent">
   <div class="app-head">
     <div class="app-head-inner">
-    <router-link :to="{path:'/'}">
-       <img id="index-logo" src="../assets/logo.png"
-          height="70" width="70" >
-    </router-link>
+        <router-link :to="{path:'/'}">
+           <img id="index-logo" src="../assets/logo.png"
+              height="70" width="70" @mouseover="hoverme">
+            
+        </router-link>
+          <p class="bubble" v-if="isShowBubble">回到主页</p>
+    <div class="head-title">WELCOME!</div>
+
       <div class="head-nav">
         <ul class="nav-list">
           <li>{{username}}</li>
@@ -25,7 +29,7 @@
   <div class="app-foot">
     <p>@2017 M_Jehol</p>
   </div>
-<!-- dialot start -->
+<!-- dialog start -->
   <my-dialog 
   :is-show="isShowAboutDialog" @on-close="closeDialog('isShowAboutDialog')">
     about
@@ -65,10 +69,15 @@ export default {
       isShowAboutDialog:false,
       isShowLogDialog:false,
       isShowRegDialog:false,
-      username:''
+      isShowBubble:false,
+      username: ''
+    
     }
   },
   methods:{
+    hoverme(){
+      this.isShowBubble=!this.isShowBubble
+    },
     aboutClick(){
     this.isShowAboutDialog=true
       
@@ -99,6 +108,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -123,7 +133,7 @@ time, mark, audio, video {
 body {
     line-height: 1.5em;
     font-family:"微软雅黑","黑体";
-    
+   
 }
 
 :focus {
@@ -201,8 +211,8 @@ input, select {
 .app-head{
   background: #363636;
   color:#b2b2b2;
-  height: 90px;
-  line-height: 90px;
+  height: 100px;
+  line-height: 95px;
   width: 100%;
 }
 .app-head-inner{
@@ -240,6 +250,32 @@ input, select {
 }
 #index-logo{
   margin: 10px 100px;
+}
+#index-logo:hover::before{
+  content: '';
+  border-width: 2px;
+  width: 100px;
+  height: 38px;
+  border-radius: 40px 10px;  
+  position: absolute;
+
+}
+.head-title{
+  background: url(../assets/logo.png);
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 6em;
+  font-weight: bolder;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.bubble{
+  position: absolute;
+  top: 40px;
+  left: 200px;
+  font-size: 20px;
+
 }
 
 </style>

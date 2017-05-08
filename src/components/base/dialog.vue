@@ -5,7 +5,7 @@
        v-if="isShow" @click="closeMyself"></div>
     <transition name="drop">
       <div class="dialog-content" v-if="isShow">
-        <p class="dialog-close" @click="closeMyself">x</p>
+        <p class="dialog-close" @click="closeMyself">X</p>
         <slot>empty</slot>
       </div>
     </transition>
@@ -51,29 +51,51 @@ methods:{
   height: 100%;
 }
 .dialog-cover {
-  background: #000;
-  opacity: .3;
+  background: white;
+  opacity: .6;
+  filter: blur(25px);
   position: fixed;
   z-index: 5;
-  top: 0;
+  top: 15%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 50%;
+
 }
 .dialog-content {
-  width: 50%;
+  width: 400px;
   position: fixed;
   max-height: 50%;
   overflow: auto;
-  background: #fff;
+  background: 
+ linear-gradient(-45deg,transparent,white);
+
+  border-radius: .5em;
+
   top: 20%;
-  left: 50%;
+  left: 60%;
   margin-left: -25%;
   z-index: 10;
-  border: 2px solid #464068;
+  border: 0px solid #464068;
   padding: 2%;
   line-height: 1.6;
+ 
 }
+.dialog-content::before{
+  content: "";
+  position: absolute;
+
+  bottom: 0;right: 0;
+  width: 5em;height: 3em;
+  border-radius: 20%;
+  background: linear-gradient(to right bottom, #3DB577 45%,transparent 50%)no-repeat  ;
+  transform: rotate(-15deg);
+  transform-origin:bottom left; 
+  box-shadow: -.8em -.8em 2em  rgba(0, 0, 0, .2);
+
+
+}
+
 .dialog-close {
   position: absolute;
   right: 5px;
@@ -86,4 +108,5 @@ methods:{
 .dialog-close:hover {
   color: #4fc08d;
 }
+
 </style>

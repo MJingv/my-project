@@ -10,7 +10,7 @@
           <span class="g-form-error">{{userErrors.errorText}}</span>
       </div>
       <div class="g-form-line">
-          <span class="g-form-label">密码：</span>
+          <span class="g-form-label">密 &nbsp;&nbsp;码：</span>
             <span class="g-form-input">
               <input type="password"
                v-model="passwordModel" placeholder="请输入密码 ">
@@ -22,7 +22,7 @@
           <a class="button" @click="onLogin">注册</a>
         </div>
        </div>
-       <div>{{errorText}}</div>
+       <div class="g-form-totalerror">{{errorText}}</div>
 
     </div>
   
@@ -163,8 +163,23 @@ methods:{
 
 
 }
+
+.button {
+  background: #4fc08d;
+  color: #fff;
+  padding: 5px 15px;
+  text-align: center;
+  margin: 0;
+
+}
 .g-form-error{
   color:red;
   padding-left: 15px; 
+  font-size: 12px;
+}
+.g-form-totalerror{
+padding: 5px 10px;
+ float: left;
+ color: red;
 }
 </style>

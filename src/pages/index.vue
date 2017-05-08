@@ -45,7 +45,7 @@
       <h2>{{item.title}}</h2>
       <p>{{item.description}}</p>
       <div class="index-board-button">
-        <a href="boardList[index].href" class="button">立即购买</a>
+        <button class="button">立即购买</button>
       </div>
     </div>
     </div>
@@ -136,20 +136,20 @@ export default {
           list:[
          {
               name: '数据统计',
-              url: 'http://starcraft.com'
+              url: ''
             },
             {
               name: '数据预测',
-              url: 'http://warcraft.com'
+              url: ''
             },
             {
               name: '流量分析',
-              url: 'http://overwatch.com',
+              url: '',
               hot: true
             },
             {
               name: '广告发布',
-              url: 'http://hearstone.com'
+              url: ''
             }
           ]
 
@@ -160,20 +160,20 @@ export default {
           list:[
                 {
               name: '91助手',
-              url: 'http://weixin.com'
+              url: ''
             },
             {
               name: '产品助手',
-              url: 'http://twitter.com',
+              url: '',
               hot: true
             },
             {
               name: '智能地图',
-              url: 'http://maps.com'
+              url: ''
             },
             {
               name: '团队语音',
-              url: 'http://phone.com'
+              url: ''
             }
           ]
 
@@ -220,9 +220,13 @@ a{
 }
 .index-left-block h2 {
   background: #4fc08d;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top:solid 20px #27384C; 
   color: #fff;
   padding: 10px 15px;
   margin-bottom: 20px;
+  text-align: center;
 }
 .index-left-block h3 {
   padding: 0 15px 5px 15px;
@@ -275,6 +279,7 @@ a{
 }
 .index-board-button {
   margin-top: 20px;
+
 }
 .lastest-news {
   min-height: 512px;
@@ -293,10 +298,39 @@ a{
   white-space: nowrap;
 }
 .button {
-  background: #4fc08d;
   color: #fff;
-  padding: 10px 15px;
-  margin-bottom: 20px;
+  border-radius: 40px 10px;
+  border-bottom: solid 5px #1D293C;
+  border-top:0px;
+  border-left:0px;
+  border-right: 0px;
+  box-shadow: 3px 5px 15px #333333;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+}
+.button:active::before{
+  content: '';
+  background: linear-gradient(to right,rgba(225,225,225,0.6),white);
+  border-width: 2px;
+  top: 0px;
+  left: 10px;
+  width: 100px;
+  height: 38px;
+  border-radius: 40px 10px;
+  position: absolute;
+
+}
+.button::after {
+  content: '';
+  background: linear-gradient(to right,rgba(225,225,225,0.6),transparent);
+  border-width: 2px;
+  top: 0px;
+  left: 10px;
+  width: 90px;
+  height: 38px;
+  border-radius: 40px 10px;
+  position: absolute;
 }
 </style>
 
