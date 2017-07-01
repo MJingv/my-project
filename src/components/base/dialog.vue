@@ -50,7 +50,7 @@ methods:{
   width: 100%;
   height: 100%;
 }
-.dialog-cover {
+/* .dialog-cover {
   background: white;
   opacity: .6;
   filter: blur(25px);
@@ -61,14 +61,13 @@ methods:{
   width: 100%;
   height: 50%;
 
-}
+} */
 .dialog-content {
   width: 400px;
   position: fixed;
   max-height: 50%;
   overflow: auto;
-  background: 
- linear-gradient(-45deg,transparent,white);
+  background: white;
 
   border-radius: .5em;
 
@@ -81,7 +80,7 @@ methods:{
   line-height: 1.6;
  
 }
-.dialog-content::before{
+/* .dialog-content::before{
   content: "";
   position: absolute;
 
@@ -94,7 +93,7 @@ methods:{
   box-shadow: -.8em -.8em 2em  rgba(0, 0, 0, .2);
 
 
-}
+} */
 
 .dialog-close {
   position: absolute;

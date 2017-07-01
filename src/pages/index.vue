@@ -73,6 +73,7 @@ export default {
 
     }
   },
+ 
 
   data () {
     return {
@@ -321,7 +322,7 @@ a{
   position: absolute;
 
 }
-.button::after {
+/* .button::after {
   content: '';
   background: linear-gradient(to right,rgba(225,225,225,0.6),transparent);
   border-width: 2px;
@@ -331,6 +332,6 @@ a{
   height: 38px;
   border-radius: 40px 10px;
   position: absolute;
-}
+} */
 </style>
 
